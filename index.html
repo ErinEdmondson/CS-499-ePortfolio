@@ -1,78 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS-499 ePortfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS-499 ePortfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #1f2326;
-            color: #e5e7eb;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1f2326;
+      color: #e5e7eb;
+      text-align: center;
+    }
 
-        .container {
-            background: #171a1d;
-            padding: 50px;
-            max-width: 700px;
-            width: 90%;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: #f3f4f6;
-        }
+    .container {
+      background: #171a1d;
+      padding: 50px;
+      max-width: 900px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        h2 {
-            font-size: 1.3rem;
-            font-weight: normal;
-            color: #b8afa0;
-            margin-bottom: 30px;
-        }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #f3f4f6;
+    }
 
-        p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin: 10px 0;
-        }
+    h2 {
+      font-size: 1.5rem;
+      color: #b8afa0;
+      margin-bottom: 20px;
+    }
 
-        .coming-soon {
-            margin-top: 25px;
-            font-weight: bold;
-            color: #63b3ed;
-        }
+    h3 {
+      color: #f3f4f6;
+      margin-top: 25px;
+    }
 
-        footer {
-            margin-top: 35px;
-            font-size: 0.9rem;
-            color: #a0a0a0;
-        }
-    </style>
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 10px auto;
+      max-width: 750px;
+    }
+
+    .section {
+      background: #202428;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 12px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 750px;
+      height: 420px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #63b3ed;
+      color: #111827;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .button:hover {
+      background: #90cdf4;
+    }
+
+    footer {
+      margin-top: 35px;
+      font-size: 0.9rem;
+      color: #a0a0a0;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="page">
     <div class="container">
-        <h1>CS-499 Computer Science Capstone</h1>
-        <h2>ePortfolio by Erin Edmondson</h2>
 
-        <p>Welcome to my Computer Science ePortfolio.</p>
-        <p>This site will showcase my capstone enhancements, code review, professional self-assessment, and project artifacts.</p>
+      <h1>CS-499 Computer Science Capstone</h1>
+      <p>ePortfolio by Erin Edmondson</p>
 
-        <p class="coming-soon">Portfolio coming soon.</p>
+      <p>
+        Welcome to my Computer Science ePortfolio. This site showcases my capstone
+        code review, artifact enhancements, narratives, and professional self-assessment.
+      </p>
 
-        <footer>
-            Southern New Hampshire University
-        </footer>
+      <div class="section">
+        <h2>Professional Self-Assessment</h2>
+      </div>
+
+      <div class="section">
+        <h2>Code Review Video</h2>
+
+        <iframe
+          src="https://www.youtube.com/embed/ztr1MjqHt3I"
+          title="CS-499 Code Review Video"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="section">
+        <h2>Artifact One: Software Engineering and Design</h2>
+
+        <h3>Original Artifact</h3>
+        <a class="button" href="Enhancement%201%20-%20Software%20Engineering%20and%20Design/Original/ORIGINAL_inventoryapp.zip" target="_blank">
+          View Original Artifact
+        </a>
+
+        <h3>Enhanced Artifact</h3>
+        <a class="button" href="Enhancement%201%20-%20Software%20Engineering%20and%20Design/Enhanced/FINAL_ENHANCEMENT_1_ErinEdmondson_InventoryApp.zip" target="_blank">
+          View Enhanced Artifact
+        </a>
+
+        <h3>Enhancement Narrative</h3>
+      </div>
+
+      <div class="section">
+        <h2>Artifact Two</h2>
+      </div>
+
+      <div class="section">
+        <h2>Artifact Three</h2>
+      </div>
+
+      <footer>
+        Southern New Hampshire University | CS-499 Computer Science Capstone
+      </footer>
+
     </div>
+  </div>
 </body>
 </html>
