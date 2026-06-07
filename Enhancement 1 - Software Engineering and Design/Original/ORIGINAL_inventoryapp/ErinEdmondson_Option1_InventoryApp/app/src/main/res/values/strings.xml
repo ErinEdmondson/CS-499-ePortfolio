@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">ErinEdmondson_Option1_InventoryApp</string>
+    <string name="inventory_hub">Inventory Hub</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="inventory_management">Inventory Management</string>
+    <string name="add_item">Add Item</string>
+    <string name="item">Item</string>
+    <string name="quantity">Quantity</string>
+    <string name="delete">Delete</string>
+    <string name="apple">Apple</string>
+    <string name="_17">17</string>
+    <string name="notebook">Notebook</string>
+    <string name="_27">27</string>
+    <string name="monitor">Monitor</string>
+    <string name="_4">4</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="_15">15</string>
+    <string name="desk">Desk</string>
+    <string name="_3">3</string>
+    <string name="lamp">Lamp</string>
+    <string name="_34">34</string>
+    <string name="sms_alerts">SMS Alerts</string>
+    <string name="allow_notifications_for_low_inventory_levels">Allow notifications for low inventory levels?</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="current_status_permission_denied">Current Status: Permission denied</string>
+    <string name="sms_status_denied">Current Status: Permission denied</string>
+    <string name="sms_status_granted">Current Status: Permission granted</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="enter_item_quantity">Enter Item Quantity</string>
+    <string name="enter_item_name">Enter Item Name</string>
+    <string name="logout">Logout</string>
+</resources>
