@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DatabaseActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="@string/logout"
+        android:onClick="logoutUser"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btSmsAlerts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInventoryManager" />
+
+    <TextView
+        android:id="@+id/tvInventoryManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/inventory_management"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btSmsAlerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="openSmsAlerts"
+        android:text="@string/sms_alerts"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btAddItem"
+        app:layout_constraintStart_toEndOf="@id/btLogout"
+        app:layout_constraintTop_toBottomOf="@id/tvInventoryManager" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="8dp"
+        android:onClick="openAddItem"
+        android:text="@string/add_item"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInventoryManager" />
+
+    <LinearLayout
+        android:id="@+id/headerRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btLogout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/item"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/quantity"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/delete"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/grid_line"
+        app:layout_constraintTop_toBottomOf="@id/headerRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInventory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="6dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/headerDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_inventory_rows" />
+
+  <!--  <TextView
+        android:id="@+id/tvInventoryManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/inventory_management"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /> -->
+
+ <!--
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="294dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/gradient"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="@string/add_item"
+        android:onClick="openAddItem"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventoryManager" />
+
+       <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="637dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:stretchColumns="0,1,2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventoryManager"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TableRow
+            android:id="@+id/tbRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItem1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/item"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuantity1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/quantity"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDelete1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/delete"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+        <TableRow
+            android:id="@+id/tbRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItem2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/apple" />
+
+            <TextView
+                android:id="@+id/tvQuantity2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_17" />
+
+            <Button
+                android:id="@+id/btDelete2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvItem3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="320dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/notebook" />
+
+            <TextView
+                android:id="@+id/tvQuantity3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_27" />
+
+            <Button
+                android:id="@+id/btDelete3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvItem4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/monitor" />
+
+            <TextView
+                android:id="@+id/tvQuantity4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_4" />
+
+            <Button
+                android:id="@+id/btDelete4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItem5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/keyboard" />
+
+            <TextView
+                android:id="@+id/tvQuantity5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_15" />
+
+            <Button
+                android:id="@+id/btDelete5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItem6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/desk" />
+
+            <TextView
+                android:id="@+id/tvQuantity6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_3" />
+
+            <Button
+                android:id="@+id/btDelete6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItem7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/lamp" />
+
+            <TextView
+                android:id="@+id/tvQuantity7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/_34" />
+
+            <Button
+                android:id="@+id/btDelete7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/delete" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grid_line" />
+
+
+
+    </TableLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btSmsAlerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:onClick="openSmsAlerts"
+        android:text="@string/sms_alerts"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInventoryManager" /> -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
