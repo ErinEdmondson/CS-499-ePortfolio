@@ -1,0 +1,9 @@
+# Install these dependencies by using command: pip install -r requirements.txt
+
+
+dash
+dash-leaflet
+plotly
+pandas
+pymongo
+python-dotenv
